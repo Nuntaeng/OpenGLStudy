@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		A857561C1FB85161009B6DBB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B301671F5869350095C63F /* OpenGL.framework */; };
 		A85756271FB854DE009B6DBB /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A85756261FB854DE009B6DBB /* libGLEW.2.1.0.dylib */; };
-		A857562E1FB85865009B6DBB /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A85756201FB853F5009B6DBB /* libglfw3.a */; };
-		A85756301FB858C1009B6DBB /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A857562F1FB858C1009B6DBB /* libglfw.3.2.dylib */; };
-		A8B3015D1F58671F0095C63F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8B3015C1F58671F0095C63F /* main.cpp */; };
+		A8B3015D1F58671F0095C63F /* Tutorial01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8B3015C1F58671F0095C63F /* Tutorial01.cpp */; };
+		A8FD4EA61FB92DA300A121C7 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FD4EA41FB92DA300A121C7 /* libglfw.3.3.dylib */; };
+		A8FD4EA71FB92DA300A121C7 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FD4EA51FB92DA300A121C7 /* libglfw3.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,10 +36,12 @@
 		A857562B1FB85839009B6DBB /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ../../../../usr/local/lib; sourceTree = "<group>"; };
 		A857562F1FB858C1009B6DBB /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		A8B301591F58671F0095C63F /* HelloOpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloOpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8B3015C1F58671F0095C63F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A8B3015C1F58671F0095C63F /* Tutorial01.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tutorial01.cpp; sourceTree = "<group>"; };
 		A8B301641F58672C0095C63F /* libsb6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsb6.a; path = ../../sb6code/lib/libsb6.a; sourceTree = "<group>"; };
 		A8B301661F5869350095C63F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		A8B301671F5869350095C63F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		A8FD4EA41FB92DA300A121C7 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		A8FD4EA51FB92DA300A121C7 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,8 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A85756301FB858C1009B6DBB /* libglfw.3.2.dylib in Frameworks */,
-				A857562E1FB85865009B6DBB /* libglfw3.a in Frameworks */,
+				A8FD4EA61FB92DA300A121C7 /* libglfw.3.3.dylib in Frameworks */,
+				A8FD4EA71FB92DA300A121C7 /* libglfw3.a in Frameworks */,
 				A85756271FB854DE009B6DBB /* libGLEW.2.1.0.dylib in Frameworks */,
 				A857561C1FB85161009B6DBB /* OpenGL.framework in Frameworks */,
 			);
@@ -77,7 +79,7 @@
 		A8B3015B1F58671F0095C63F /* HelloOpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				A8B3015C1F58671F0095C63F /* main.cpp */,
+				A8B3015C1F58671F0095C63F /* Tutorial01.cpp */,
 			);
 			path = HelloOpenGL;
 			sourceTree = "<group>";
@@ -85,6 +87,8 @@
 		A8B301631F58672C0095C63F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8FD4EA41FB92DA300A121C7 /* libglfw.3.3.dylib */,
+				A8FD4EA51FB92DA300A121C7 /* libglfw3.a */,
 				A857562F1FB858C1009B6DBB /* libglfw.3.2.dylib */,
 				A857562B1FB85839009B6DBB /* lib */,
 				A85756291FB857D5009B6DBB /* libglfw.3.dylib */,
@@ -158,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8B3015D1F58671F0095C63F /* main.cpp in Sources */,
+				A8B3015D1F58671F0095C63F /* Tutorial01.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
