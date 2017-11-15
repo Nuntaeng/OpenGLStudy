@@ -29,6 +29,8 @@
 /* Begin PBXFileReference section */
 		A80321461FB8103700159CCA /* libglfw.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.dylib; path = ../../../../usr/local/lib/libglfw.dylib; sourceTree = "<group>"; };
 		A80321481FB8105200159CCA /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
+		A82E3E821FB956BD0055EA76 /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
+		A82E3E831FB957270055EA76 /* fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
 		A85756201FB853F5009B6DBB /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
 		A85756221FB85404009B6DBB /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = ../../../../usr/local/lib/libglfw.a; sourceTree = "<group>"; };
 		A85756261FB854DE009B6DBB /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
@@ -80,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				A85CDEE41FB9316E00F45133 /* main.cpp */,
+				A82E3E821FB956BD0055EA76 /* vertex.glsl */,
+				A82E3E831FB957270055EA76 /* fragment.glsl */,
 			);
 			path = HelloOpenGL;
 			sourceTree = "<group>";
