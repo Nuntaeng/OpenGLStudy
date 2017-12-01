@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A83448291FD11171008096D0 /* libglm_shared.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A83448271FD11171008096D0 /* libglm_shared.dylib */; };
+		A834482A1FD11171008096D0 /* libglm_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A83448281FD11171008096D0 /* libglm_static.a */; };
+		A845A9591FBC711D007A5698 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A85CDEE41FB9316E00F45133 /* main.cpp */; };
 		A857561C1FB85161009B6DBB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B301671F5869350095C63F /* OpenGL.framework */; };
 		A85756271FB854DE009B6DBB /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A85756261FB854DE009B6DBB /* libGLEW.2.1.0.dylib */; };
-		A85CDEE51FB9316E00F45133 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A85CDEE41FB9316E00F45133 /* main.cpp */; };
 		A8FD4EA61FB92DA300A121C7 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FD4EA41FB92DA300A121C7 /* libglfw.3.3.dylib */; };
 		A8FD4EA71FB92DA300A121C7 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FD4EA51FB92DA300A121C7 /* libglfw3.a */; };
 /* End PBXBuildFile section */
@@ -31,6 +33,8 @@
 		A80321481FB8105200159CCA /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 		A82E3E821FB956BD0055EA76 /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
 		A82E3E831FB957270055EA76 /* fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
+		A83448271FD11171008096D0 /* libglm_shared.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglm_shared.dylib; path = ../libs/macOS/libglm_shared.dylib; sourceTree = "<group>"; };
+		A83448281FD11171008096D0 /* libglm_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglm_static.a; path = ../libs/macOS/libglm_static.a; sourceTree = "<group>"; };
 		A85756201FB853F5009B6DBB /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
 		A85756221FB85404009B6DBB /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = ../../../../usr/local/lib/libglfw.a; sourceTree = "<group>"; };
 		A85756261FB854DE009B6DBB /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83448291FD11171008096D0 /* libglm_shared.dylib in Frameworks */,
+				A834482A1FD11171008096D0 /* libglm_static.a in Frameworks */,
 				A8FD4EA61FB92DA300A121C7 /* libglfw.3.3.dylib in Frameworks */,
 				A8FD4EA71FB92DA300A121C7 /* libglfw3.a in Frameworks */,
 				A85756271FB854DE009B6DBB /* libGLEW.2.1.0.dylib in Frameworks */,
@@ -91,6 +97,8 @@
 		A8B301631F58672C0095C63F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A83448271FD11171008096D0 /* libglm_shared.dylib */,
+				A83448281FD11171008096D0 /* libglm_static.a */,
 				A8FD4EA41FB92DA300A121C7 /* libglfw.3.3.dylib */,
 				A8FD4EA51FB92DA300A121C7 /* libglfw3.a */,
 				A857562F1FB858C1009B6DBB /* libglfw.3.2.dylib */,
@@ -166,7 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A85CDEE51FB9316E00F45133 /* main.cpp in Sources */,
+				A845A9591FBC711D007A5698 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

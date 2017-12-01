@@ -1,7 +1,9 @@
-#version 330 core
-layout(location = 0) in vec3 vertexPosition_modelspace;
+#version 430 core
 
-void main() {
-gl_Position.xyz = vertexPosition_modelspace;
-gl_Position.w = 1.0;
+
+void main(void) {
+    const vec4 vertices[3] = vec4[3](vec4(0.25, -0.25, 0.5, 1.0),
+                                     vec4(-0.25, -0.25, 0.5, 1.0),
+                                     vec4(0.25, 0.25, 0.5, 1.0));
+    gl_Position = vertices[gl_VertexID];
 }

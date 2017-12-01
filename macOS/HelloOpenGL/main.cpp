@@ -9,6 +9,7 @@
 
 
 
+
 std::string readCode(std::string filePath_) {
     std::string retcode = "";
     std::ifstream stream(filePath_, std::ios::in);
@@ -31,13 +32,13 @@ GLuint LoadShaders(std::string vFilePath_, std::string fFilePath_) {
     // Compile Vertex Shader
     printf("Compiling Vertex Shader... %s\n", vFilePath_.c_str());
     const char* vCodePtr = vShaderCode.c_str();
-    glShaderSource(vShaderID, 1, &vCodePtr, nullptr);
+    glShaderSource(vShaderID, 1, &vCodePtr, NULL);
     glCompileShader(vShaderID);
     
     // Compile Fragment Shader
     printf("Compiling Fragment Shader... %s\n", fFilePath_.c_str());
     const char* fCodePtr = fShaderCode.c_str();
-    glShaderSource(fShaderID, 1, &fCodePtr, nullptr);
+    glShaderSource(fShaderID, 1, &fCodePtr, NULL);
     glCompileShader(fShaderID);
     
     printf("Linking to Program...\n");
@@ -46,8 +47,6 @@ GLuint LoadShaders(std::string vFilePath_, std::string fFilePath_) {
     glAttachShader(programID, fShaderID);
     glLinkProgram(programID);
     
-    glDetachShader(programID, vShaderID);
-    glDetachShader(programID, fShaderID);
     glDeleteShader(vShaderID);
     glDeleteShader(fShaderID);
     
@@ -61,9 +60,7 @@ int main() {
     if (!glfwInit())
         return -1;
     
-    
     // Create GLFW window context
-    glfwWindowHint(GLFW_SAMPLES, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
@@ -74,7 +71,9 @@ int main() {
         glfwTerminate();
         return -1;
     }
+    glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
     glfwMakeContextCurrent(window);
+    glfwSwapInterval(1);
     
     // Init GLEW
     glewExperimental = true;
@@ -83,25 +82,8 @@ int main() {
         return -1;
     }
     
-    // Init vertex array
-    GLuint vertexArrayID;
-    glGenVertexArrays(1, &vertexArrayID);
-    glBindVertexArray(vertexArrayID);
-    
-    
-    // Initialize datas for drawing triangle
-    static const GLfloat VERTEX_TRIANGLE[] {
-        -1.f, -1.f, 0.f,
-        1.f, 1.f, 0.f,
-        0.f, 1.f, 0.f
-    };
-    GLuint vertexBuffer;
-    glGenBuffers(1, &vertexBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX_TRIANGLE), VERTEX_TRIANGLE, GL_STATIC_DRAW);
-    
     // Initialize Shader
-    GLuint programID = LoadShaders("Vertex.glsl", "fragment.glsl");
+    GLuint programID = LoadShaders("vertex.glsl", "fragment.glsl");
     
     // Print Initialized Information
     puts("===== LOAD SUCCESS =====");
@@ -109,21 +91,28 @@ int main() {
     printf("GLSL Version = %s\n", glGetString(GL_SHADING_LANGUAGE_VERSION));
     
     
+    
+    // Game Init
+    GLuint vao;
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+    
     // Game Loop
-    glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
     while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glUseProgram(programID);
-        glEnableVertexAttribArray(0);
-        glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-        glDisableVertexAttribArray(0);
+        const static GLfloat bgColor[] = { 0.f, 0.f, 0.f, 1.f };
+        glClearBufferfv(GL_COLOR, 0, bgColor);
         
+        glUseProgram(programID);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
         
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
+    
+    // Destroy
+    glDeleteVertexArrays(1, &vao);
+    glDeleteProgram(programID);
+    glDeleteVertexArrays(1, &vao);
     
     glfwDestroyWindow(window);
     glfwTerminate();
