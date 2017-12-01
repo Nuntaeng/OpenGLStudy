@@ -6,7 +6,6 @@
 
 
 
-
 int main() {
 
 	if (!glfwInit()) {
@@ -63,4 +62,8 @@ int main() {
 		glfwPollEvents();
 	} while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
 		glfwWindowShouldClose(window) == 0);
+
+
+	glfwTerminate();
+	return 0;
 }
